@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Stream!</title>
+
+		<style>
+			.center{
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				width: 20%;
+				justify-content: center;
+				align-items: center;
+				vertical-align: middle;
+			}
+
+		</style>
+
+	</head>
+
+	<body style="background-color: #0f543a; vertical-align: middle;">
+		<h1 style="text-align: center; color:white;">Welcome to my project!</h1>
+
+		<img 
+		class="center"
+		src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/2048px-Python-logo-notext.svg.png"
+		alt="python logo"
+		height="300"
+        width="150">
+
+        <br>
+
+        <form action="" method="post">
+	        
+	         <input class="center" type="password" placeholder="Password" name="password" value="{{request.form.password}}">
+
+	        <br>
+
+	        <input class="center" class="btn btn-default" type="submit" value="Login">
+        </form>
+		    {% if error %}
+		      <p style="color: white; text-align: center;"    class="error"><strong>Error:</strong> {{ error }}
+		    {% endif %}
+
+
+        
+
+	</body>
+</html>
