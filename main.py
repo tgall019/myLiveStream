@@ -5,7 +5,6 @@ import cv2
 # Source 3
 
 app = Flask(__name__)
-run_with_ngrok(app) # Source 2
 
 camera = cv2.VideoCapture(0)
 
@@ -32,6 +31,7 @@ def login():
             return redirect(url_for("home"))
     return render_template("index.html", error=error)
 
+
 # Source 7
 @app.route("/home", methods=["GET", "POST"])
 def home():
@@ -39,7 +39,7 @@ def home():
         if request.form['submit_button'] == 'Static Feed':
             return redirect(url_for("static_vid"))
         elif request.form['submit_button'] == 'Live Feed':
-            return redirect(url_for("video_feed"))
+            return redirect(url_for("live_feed"))
         else:
             pass  # unknown
     elif request.method == 'GET':
@@ -50,10 +50,16 @@ def home():
 def static_vid():
     return render_template("static.html")
 
+
 # Source 6
 @app.route("/live")
 def video_feed():
     return Response(gen_frames(), mimetype="multipart/x-mixed-replace; boundary=frame")
+
+
+@app.route("/live_feed")
+def live_feed():
+    return render_template("live.html")
 
 
 if __name__ == "__main__":
