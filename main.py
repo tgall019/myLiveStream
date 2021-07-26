@@ -5,7 +5,6 @@ import cv2
 # Source 3
 
 app = Flask(__name__)
-
 camera = cv2.VideoCapture(0)
 
 # Source 6
