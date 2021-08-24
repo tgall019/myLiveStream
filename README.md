@@ -1,5 +1,12 @@
 # pythonProject
 
+## What is it?
+This is a web application combining mild front-end design, back-end development, and computer vision. When set up, the application allows
+the user to access his/her webcam (if available) and start a live feed that can be shared with anyone through a public link. To set up the
+application, please download the code and follow the steps below.
+
+## The Set Up
+
 The following web application was built using Python's Flask framework. The app was mae available on the internet using ngrok, and accesses
 your device's webcam using OpenCV. To be implemented in your own device, follow the following steps:
 
